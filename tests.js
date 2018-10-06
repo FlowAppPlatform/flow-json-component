@@ -33,26 +33,32 @@ describe(`JSON Tests
 
   it(`Should successfully return json`, function(done) {
     var component = new ToJson();
-    try {
-      component.getProperty('Variable').data = { a: 1 };
-      component.getPort('Success').onEmit(done);
-      component.getPort('Error').onEmit(function() {
-        done(component.getPort('Error').getProperty('Data').data);
-      });
-      component.execute();
-    } catch(e) { done(new Error('Component does not successfully return json')); }
+    component.getProperty('Variable').data = { a: 1 };
+    component.getPort('Success').onEmit(done);
+    component.getPort('Error').onEmit(function() {
+      done(new Error('Component does not successfully return json'));
+    });
+    component.execute();
   });
 
   it(`Should successfully parse json`, function(done) {
     var component = new FromJson();
-    try {
-      component.getProperty('Variable').data = '{ "a": "1" }';
-      component.getPort('Success').onEmit(done);
-      component.getPort('Error').onEmit(function() {
-        done(component.getPort('Error').getProperty('Data').data);
-      });
-      component.execute();
-    } catch(e) { done(new Error('Component does not successfully return json')); }
+    component.getProperty('Variable').data = '{ "a": "1" }';
+    component.getPort('Success').onEmit(done);
+    component.getPort('Error').onEmit(function() {
+      done(new Error('Component does not successfully parse json'));
+    });
+    component.execute();
+  });
+
+  it(`Should not successfully parse invalid json`, function(done) {
+    var component = new FromJson();
+    component.getProperty('Variable').data = '{ a": "1" }';
+    component.getPort('Success').onEmit(function() {
+      done(new Error('Component successfully parses invalid json'));
+    });
+    component.getPort('Error').onEmit(done);
+    component.execute();
   });
 
 });
