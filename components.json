@@ -1,0 +1,142 @@
+{
+  "flow-json-component-to-json": {
+    "componentId": "flow-json-component-to-json",
+    "title": "To Json",
+    "imgSrc": "assets/icons/to-json.svg",
+    "type": "flow-graph-component",
+    "file": "src/to-json.js",
+    "executionPlatform": ["server", "client"],
+    "metadata": {
+      "icon-color": "#7ab260"
+    },
+    "ports": [
+      {
+        "id": "Success",
+        "title": "Success",
+        "description": "Denotes the state when content is successfully changed to json",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Data",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Error",
+        "title": "Error",
+        "description": "Denotes the state when an error occurs",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Error",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "categoryName": "General",
+        "categoryDescription": "Basic settings about the ToJson component.",
+        "properties": [
+          {
+            "id": "Variable",
+            "name": "Content",
+            "type": "object",
+            "data": null,
+            "options": { "required": true }
+          }
+        ]
+      }
+    ],
+    "showOnComponentsPanel": false,
+    "isDeletable": false
+  },
+  "flow-json-component-from-json": {
+    "componentId": "flow-json-component-from-json",
+    "title": "From Json",
+    "imgSrc": "assets/icons/from-json.svg",
+    "type": "flow-graph-component",
+    "file": "src/from-json.js",
+    "executionPlatform": ["server", "client"],
+    "metadata": {
+      "icon-color": "#7ab260"
+    },
+    "ports": [
+      {
+        "id": "Success",
+        "title": "Success",
+        "description": "Denotes the state when content is successfully parsed from json",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Data",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "Error",
+        "title": "Error",
+        "description": "Denotes the state when an error occurs",
+        "properties": [
+          {
+            "categoryName": "General",
+            "categoryDescription": "Basic settings about this port.",
+            "properties": [
+              {
+                "id": "Data",
+                "name": "Error",
+                "type": "object",
+                "data": null,
+                "options": { "required": true }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "properties": [
+      {
+        "categoryName": "General",
+        "categoryDescription": "Basic settings about the FromJson component.",
+        "properties": [
+          {
+            "id": "Variable",
+            "name": "Content",
+            "type": "text",
+            "data": null,
+            "options": { "required": true }
+          }
+        ]
+      }
+    ],
+    "showOnComponentsPanel": false,
+    "isDeletable": false
+  }
+}
