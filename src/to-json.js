@@ -1,23 +1,10 @@
-var Flow = require('flow-platform-sdk');
+var Component = require('./component');
 
-module.exports = class Component extends Flow.Component {
+module.exports = class ToJson extends Component {
   constructor() {
     
     super();
     this.name = 'To JSON';
-
-    var variable = new Flow.Property('Variable', 'object');
-    variable.required = true;
-    this.addProperty(variable);
-
-    var success = new Flow.Port('Success');
-    var error = new Flow.Port('Error');
-
-    success.addProperty(new Flow.Property('Data', 'object'));
-    error.addProperty(new Flow.Property('Data', 'object'));
-
-    this.addPort(success);
-    this.addPort(error);
 
     this.attachTask(function() {
       try {
