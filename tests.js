@@ -2,7 +2,8 @@
  * Tests
  *  */
 
-var Component = require('./src/to-json');
+var Component = require('./src/component');
+var ToJson = require('./src/to-json');
 
 describe(`Component Tests
 `, function() {
@@ -29,9 +30,8 @@ describe(`Component Tests
 describe(`JSON Tests
 `, function() {
 
-  var component = new Component();
-
   it(`Should successfully return json`, function(done) {
+    var component = new ToJson();
     try {
       component.getProperty('Variable').data = { a: 1 };
       component.getPort('Success').onEmit(done);
