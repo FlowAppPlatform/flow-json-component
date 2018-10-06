@@ -1,16 +1,16 @@
 var Component = require('./component');
 
-module.exports = class ToJson extends Component {
+module.exports = class FromJson extends Component {
   constructor() {
     
     super();
-    this.name = 'To JSON';
+    this.name = 'From JSON';
 
     this.attachTask(function() {
       try {
-        const json = JSON.stringify(this.getProperty('Variable').data);
+        const object = JSON.parse(this.getProperty('Variable').data);
         const port = this.getPort('Success');
-        port.getProperty('Data').data = json;
+        port.getProperty('Data').data = object;
         port.emit();
         this.taskComplete();
       } catch(err) {
