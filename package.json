@@ -1,0 +1,23 @@
+{
+  "name": "flow-json-component",
+  "version": "1.0.0",
+  "description": "Component to change values to json and reverse the process designed using Flow SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlowAppPlatform/flow-json-component.git"
+  },
+  "keywords": [
+    "json",
+    "flow"
+  ],
+  "author": "Hackerbay Inc. <hello@hackerbay.io>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/FlowAppPlatform/flow-json-component/issues"
+  },
+  "homepage": "https://github.com/FlowAppPlatform/flow-json-component#readme"
+}
