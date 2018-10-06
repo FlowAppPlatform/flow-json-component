@@ -4,6 +4,7 @@
 
 var Component = require('./src/component');
 var ToJson = require('./src/to-json');
+var FromJson = require('./src/from-json');
 
 describe(`Component Tests
 `, function() {
@@ -34,6 +35,18 @@ describe(`JSON Tests
     var component = new ToJson();
     try {
       component.getProperty('Variable').data = { a: 1 };
+      component.getPort('Success').onEmit(done);
+      component.getPort('Error').onEmit(function() {
+        done(component.getPort('Error').getProperty('Data').data);
+      });
+      component.execute();
+    } catch(e) { done(new Error('Component does not successfully return json')); }
+  });
+
+  it(`Should successfully parse json`, function(done) {
+    var component = new FromJson();
+    try {
+      component.getProperty('Variable').data = '{ "a": "1" }';
       component.getPort('Success').onEmit(done);
       component.getPort('Error').onEmit(function() {
         done(component.getPort('Error').getProperty('Data').data);
