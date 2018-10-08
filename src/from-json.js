@@ -6,19 +6,29 @@ module.exports = class FromJson extends Component {
     super();
     this.name = 'From JSON';
 
+    var text = new Flow.Property('Text', 'object');
+    text.required = true;
+    this.addProperty(text);
+
+    var success = new Flow.Port('Success');
+    var error = new Flow.Port('Error');
+
+    success.addProperty(new Flow.Property('Data', 'text'));
+    error.addProperty(new Flow.Property('Data', 'text'));
+
+    this.addPort(success);
+    this.addPort(error);
+
     this.attachTask(function() {
+      let port = this.getPort('Success');
       try {
-        const object = JSON.parse(this.getProperty('Variable').data);
-        const port = this.getPort('Success');
-        port.getProperty('Data').data = object;
-        port.emit();
-        this.taskComplete();
+        port.getProperty('Data').data = JSON.parse(this.getProperty('Text').data);
       } catch(err) {
-        const port = this.getPort('Error');
+        port = this.getPort('Error');
         port.getProperty('Data').data = err;
-        port.emit();
-        this.taskComplete();
       }
+      port.emit();
+      this.taskComplete();
     });
 
   }
