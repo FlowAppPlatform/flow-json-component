@@ -2,14 +2,30 @@
  * Tests
  *  */
 
-var Component = require('./src/component');
-var ToJson = require('./src/to-json');
-var FromJson = require('./src/from-json');
+var ToJson = require('./to-json');
+var FromJson = require('./from-json');
 
 describe(`Component Tests
 `, function() {
 
-  var component = new Component();
+  var component = new ToJson();
+
+  it('Component should have all required properties', function(done) {
+    try {
+      component.getProperty('Text');
+      done();
+    } catch(e) { done(new Error('Component missing required properties')); }
+  });
+
+  it('Component should have all required ports with Data property', function(done) {
+    try {
+      component.getPort('Success').getProperty('Data');
+      component.getPort('Error').getProperty('Data');
+      done();
+    } catch(e) { done(new Error('Component missing required ports')); }
+  });
+
+  component = new FromJson();
 
   it('Component should have all required properties', function(done) {
     try {

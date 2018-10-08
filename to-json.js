@@ -6,7 +6,7 @@ module.exports = class ToJson extends Flow.Component {
     super();
     this.name = 'To JSON';
 
-    var text = new Flow.Property('Text', 'text');
+    var text = new Flow.Property('Text', 'object');
     text.required = true;
     this.addProperty(text);
 

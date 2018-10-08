@@ -13,7 +13,7 @@ module.exports = class FromJson extends Flow.Component {
     var success = new Flow.Port('Success');
     var error = new Flow.Port('Error');
 
-    success.addProperty(new Flow.Property('Data', 'text'));
+    success.addProperty(new Flow.Property('Data', 'object'));
     error.addProperty(new Flow.Property('Data', 'text'));
 
     this.addPort(success);
