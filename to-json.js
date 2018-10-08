@@ -1,6 +1,6 @@
-var Component = require('./component');
+var Flow = require('flow-platform-sdk');
 
-module.exports = class ToJson extends Component {
+module.exports = class ToJson extends Flow.Component {
   constructor() {
     
     super();
