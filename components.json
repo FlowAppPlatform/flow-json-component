@@ -1,7 +1,7 @@
 {
   "flow-json-component-to-json": {
     "componentId": "flow-json-component-to-json",
-    "title": "To Json",
+    "title": "From Text to JSON",
     "imgSrc": "assets/icons/to-json.svg",
     "type": "flow-graph-component",
     "file": "src/to-json.js",
@@ -13,7 +13,7 @@
       {
         "id": "Success",
         "title": "Success",
-        "description": "Denotes the state when content is successfully changed to json",
+        "description": "Converted Text to JSON.",
         "properties": [
           {
             "categoryName": "General",
@@ -21,7 +21,7 @@
             "properties": [
               {
                 "id": "Data",
-                "name": "Data",
+                "name": "JSON",
                 "type": "object",
                 "data": null,
                 "options": { "required": true }
@@ -33,7 +33,7 @@
       {
         "id": "Error",
         "title": "Error",
-        "description": "Denotes the state when an error occurs",
+        "description": "An error occured.",
         "properties": [
           {
             "categoryName": "General",
@@ -42,7 +42,7 @@
               {
                 "id": "Data",
                 "name": "Error",
-                "type": "object",
+                "type": "text",
                 "data": null,
                 "options": { "required": true }
               }
@@ -54,24 +54,24 @@
     "properties": [
       {
         "categoryName": "General",
-        "categoryDescription": "Basic settings about the ToJson component.",
+        "categoryDescription": "Basic settings about the ToJSON component.",
         "properties": [
           {
-            "id": "Variable",
-            "name": "Content",
-            "type": "object",
+            "id": "Text",
+            "name": "Text",
+            "type": "text",
             "data": null,
             "options": { "required": true }
           }
         ]
       }
     ],
-    "showOnComponentsPanel": false,
-    "isDeletable": false
+    "showOnComponentsPanel": true,
+    "isDeletable": true
   },
   "flow-json-component-from-json": {
     "componentId": "flow-json-component-from-json",
-    "title": "From Json",
+    "title": "From JSON to Text",
     "imgSrc": "assets/icons/from-json.svg",
     "type": "flow-graph-component",
     "file": "src/from-json.js",
@@ -83,7 +83,7 @@
       {
         "id": "Success",
         "title": "Success",
-        "description": "Denotes the state when content is successfully parsed from json",
+        "description": "Converted JSON to Text",
         "properties": [
           {
             "categoryName": "General",
@@ -91,8 +91,8 @@
             "properties": [
               {
                 "id": "Data",
-                "name": "Data",
-                "type": "object",
+                "name": "Text",
+                "type": "text",
                 "data": null,
                 "options": { "required": true }
               }
@@ -103,7 +103,7 @@
       {
         "id": "Error",
         "title": "Error",
-        "description": "Denotes the state when an error occurs",
+        "description": "An error occured",
         "properties": [
           {
             "categoryName": "General",
@@ -112,7 +112,7 @@
               {
                 "id": "Data",
                 "name": "Error",
-                "type": "object",
+                "type": "text",
                 "data": null,
                 "options": { "required": true }
               }
@@ -124,19 +124,19 @@
     "properties": [
       {
         "categoryName": "General",
-        "categoryDescription": "Basic settings about the FromJson component.",
+        "categoryDescription": "Basic settings about the FromJSON component.",
         "properties": [
           {
-            "id": "Variable",
-            "name": "Content",
-            "type": "text",
+            "id": "Text",
+            "name": "JSON",
+            "type": "object",
             "data": null,
             "options": { "required": true }
           }
         ]
       }
     ],
-    "showOnComponentsPanel": false,
-    "isDeletable": false
+    "showOnComponentsPanel": true,
+    "isDeletable": true
   }
 }
