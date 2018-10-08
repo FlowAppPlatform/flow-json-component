@@ -13,6 +13,7 @@ after_success:
 - npm set init.author.email $NPM_EMAIL
 - npm set init.author.url "https://flowappplatform.com
 - npm --no-git-tag-version version 1.0.$TRAVIS_BUILD_NUMBER --force
+- echo "${NPM_USERNAME} ${NPM_EMAIL}" > .npmrc
 - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" > .npmrc
 - sleep 10s
 deploy:
