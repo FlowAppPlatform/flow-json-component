@@ -1,5 +1,5 @@
 # Flow Json component
-The component is designed using Flow SDK to change values to json or reverse the process.
+The component is designed using Flow SDK to convert text to JSON or to convert JSON to text.
 
 *To use the component, install the package in your NodeJS project*
 
@@ -14,28 +14,32 @@ npm install flow-json-component --save
 const Component = require('flow-json-component');
 ```
 
-*Create instance of component*
+*To change text to json*
 
 ```javascript
-// create instance of the toJson component to change content to json
-const component = new Component.toJson();
+// create instance of the toJSON component
+const component = new Component.toJSON();
 
-// or the fromJson component to parse json content
-const component = new Component.fromJson();
+// provide text to change to json
+component.getProperty('Text').data = { name: "Allan Wise" };
+```
 
-// provide content to change to json
-component.getProperty('Variable').data = {a:1};
+*To change json to text*
 
-// or to change from json
-component.getProperty('Variable').data = '{"a":"1"}';
+```javascript
+// create instance of the fromJSON component
+const component = new Component.fromJSON();
+
+// provide json to change to text
+component.getProperty('Text').data = '{"shape":"circle"}';
 ```
 
 *Listen in for port emit events*
 ```javascript
 component.getPort('Success').onEmit(function(){
   // task succesfully ran
-  // the content can be accessed through the 'Data' property of the port
-  let content = component.getPort('Success').getProperty('Data').data;
+  // the result can be accessed through the 'Data' property of the port
+  let result = component.getPort('Success').getProperty('Data').data;
 });
 
 component.getPort('Error').onEmit(function(){
