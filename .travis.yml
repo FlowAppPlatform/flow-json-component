@@ -21,7 +21,7 @@ deploy:
    skip_cleanup: true
    script: npm publish
    on:
-     branch: feature-fixes
+     branch: master
      tags: false
 
 notifications:
