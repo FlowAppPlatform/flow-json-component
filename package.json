@@ -1,7 +1,7 @@
 {
   "name": "flow-json-component",
   "version": "1.0.0",
-  "description": "Component to change values to json and reverse the process designed using Flow SDK",
+  "description": "Component designed using Flow SDK to convert text to JSON or to convert JSON to text",
   "main": "index.js",
   "scripts": {
     "test": "mocha tests.js"
