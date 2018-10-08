@@ -25,7 +25,7 @@ module.exports = class ToJson extends Flow.Component {
         port.getProperty('Data').data = JSON.stringify(this.getProperty('Text').data);
       } catch(err) {
         port = this.getPort('Error');
-        port.getProperty('Data').data = err;
+        port.getProperty('Data').data = "Cannot convert to JSON";
       }
       port.emit();
       this.taskComplete();

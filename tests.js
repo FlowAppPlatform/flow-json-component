@@ -13,7 +13,7 @@ describe(`Component Tests
 
   it('Component should have all required properties', function(done) {
     try {
-      component.getProperty('Variable');
+      component.getProperty('Text');
       done();
     } catch(e) { done(new Error('Component missing required properties')); }
   });
@@ -33,7 +33,7 @@ describe(`JSON Tests
 
   it(`Should successfully return json`, function(done) {
     var component = new ToJson();
-    component.getProperty('Variable').data = { a: 1 };
+    component.getProperty('Text').data = { a: 1 };
     component.getPort('Success').onEmit(done);
     component.getPort('Error').onEmit(function() {
       done(new Error('Component does not successfully return json'));
@@ -43,7 +43,7 @@ describe(`JSON Tests
 
   it(`Should successfully parse json`, function(done) {
     var component = new FromJson();
-    component.getProperty('Variable').data = '{ "a": "1" }';
+    component.getProperty('Text').data = '{ "a": "1" }';
     component.getPort('Success').onEmit(done);
     component.getPort('Error').onEmit(function() {
       done(new Error('Component does not successfully parse json'));
@@ -53,7 +53,7 @@ describe(`JSON Tests
 
   it(`Should not successfully parse invalid json`, function(done) {
     var component = new FromJson();
-    component.getProperty('Variable').data = '{ a": "1" }';
+    component.getProperty('Text').data = '{ a": "1" }';
     component.getPort('Success').onEmit(function() {
       done(new Error('Component successfully parses invalid json'));
     });

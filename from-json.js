@@ -25,7 +25,7 @@ module.exports = class FromJson extends Flow.Component {
         port.getProperty('Data').data = JSON.parse(this.getProperty('Text').data);
       } catch(err) {
         port = this.getPort('Error');
-        port.getProperty('Data').data = err;
+        port.getProperty('Data').data = "Cannot convert to Text";
       }
       port.emit();
       this.taskComplete();
