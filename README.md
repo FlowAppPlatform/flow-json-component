@@ -47,9 +47,14 @@ component.getPort('Error').onEmit(function(){
   // the actual error can be accessed through the 'Data' property of the port
   let err = component.getPort('Error').getProperty('Data').data;
 });
+```
 
+*Execute the component*
+```javascript
+// add the component to a graph before executing it
+const Graph = require('flow-platform-sdk').Graph;
+new Graph("graph-1").addComponent(component);
 
-// mandatory to execute the component
 component.execute();
 ```
 

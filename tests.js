@@ -5,19 +5,15 @@
 var ToJson = require('./to-json');
 var FromJson = require('./from-json');
 
+const Graph = require('flow-platform-sdk').Graph;
+const graph = new Graph("graph-1");
+
 describe(`Component Tests
 `, function() {
 
   var component = new ToJson();
 
-  it('Component should have all required properties', function(done) {
-    try {
-      component.getProperty('Text');
-      done();
-    } catch(e) { done(new Error('Component missing required properties')); }
-  });
-
-  it('Component should have all required ports with Data property', function(done) {
+  it('ToJson component should have all required ports with Data property', function(done) {
     try {
       component.getPort('Success').getProperty('Data');
       component.getPort('Error').getProperty('Data');
@@ -27,14 +23,7 @@ describe(`Component Tests
 
   component = new FromJson();
 
-  it('Component should have all required properties', function(done) {
-    try {
-      component.getProperty('Text');
-      done();
-    } catch(e) { done(new Error('Component missing required properties')); }
-  });
-
-  it('Component should have all required ports with Data property', function(done) {
+  it('FromJson component should have all required ports with Data property', function(done) {
     try {
       component.getPort('Success').getProperty('Data');
       component.getPort('Error').getProperty('Data');
@@ -54,6 +43,7 @@ describe(`JSON Tests
     component.getPort('Error').onEmit(function() {
       done(new Error('Component does not successfully return json'));
     });
+    graph.addComponent(component);
     component.execute();
   });
 
@@ -64,6 +54,7 @@ describe(`JSON Tests
     component.getPort('Error').onEmit(function() {
       done(new Error('Component does not successfully parse json'));
     });
+    graph.addComponent(component);
     component.execute();
   });
 
@@ -74,6 +65,7 @@ describe(`JSON Tests
       done(new Error('Component successfully parses invalid json'));
     });
     component.getPort('Error').onEmit(done);
+    graph.addComponent(component);
     component.execute();
   });
 
