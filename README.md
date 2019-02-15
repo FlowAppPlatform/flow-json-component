@@ -1,10 +1,10 @@
 # Flow Json component
-The component is designed using Flow SDK to convert text to JSON or to convert JSON to text.
+The component converts text to JSON and JSON to text and is designed using Flow SDK.
 
-*To use the component, install the package in your NodeJS project*
+*To get started, install the package in your NodeJS project*
 
 ```
-npm install flow-json-component --save
+npm i flow-json-component --save
 ```
 
 *Use the component as below*

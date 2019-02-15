@@ -1,9 +1,10 @@
 {
   "flow-json-component-to-json": {
-    "componentId": "flow-json-component-to-json",
+    "graphComponentId": "flow-json-component-to-json",
     "title": "From Text to JSON",
-    "imgSrc": "assets/icons/to-json.svg",
-    "type": "flow-graph-component",
+    "category": "Actions",
+    "imgSrc": "assets/images/icons/to-json.svg",
+    "type": "graphComponent",
     "file": "./to-json.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
@@ -13,11 +14,11 @@
       {
         "id": "Success",
         "title": "Success",
-        "description": "Converted Text to JSON.",
+        "description": "Converted Text to JSON",
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -33,11 +34,11 @@
       {
         "id": "Error",
         "title": "Error",
-        "description": "An error occured.",
+        "description": "An error occured",
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -54,7 +55,7 @@
     "properties": [
       {
         "categoryName": "General",
-        "categoryDescription": "Basic settings about the ToJSON component.",
+        "categoryDescription": "Basic settings about the ToJSON component",
         "properties": [
           {
             "id": "Text",
@@ -70,10 +71,11 @@
     "isDeletable": true
   },
   "flow-json-component-from-json": {
-    "componentId": "flow-json-component-from-json",
+    "graphComponentId": "flow-json-component-from-json",
     "title": "From JSON to Text",
-    "imgSrc": "assets/icons/from-json.svg",
-    "type": "flow-graph-component",
+    "category": "Actions",
+    "imgSrc": "assets/images/icons/from-json.svg",
+    "type": "graphComponent",
     "file": "./from-json.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
@@ -87,7 +89,7 @@
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -107,7 +109,7 @@
         "properties": [
           {
             "categoryName": "General",
-            "categoryDescription": "Basic settings about this port.",
+            "categoryDescription": "Basic settings about this port",
             "properties": [
               {
                 "id": "Data",
@@ -124,7 +126,7 @@
     "properties": [
       {
         "categoryName": "General",
-        "categoryDescription": "Basic settings about the FromJSON component.",
+        "categoryDescription": "Basic settings about the FromJSON component",
         "properties": [
           {
             "id": "Text",

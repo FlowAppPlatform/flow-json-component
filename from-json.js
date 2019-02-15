@@ -1,9 +1,9 @@
 var Flow = require('flow-platform-sdk');
 
 module.exports = class FromJson extends Flow.Component {
-  constructor() {
+  constructor(id = null) {
     
-    super();
+    super(id);
     this.name = 'From JSON';
 
     var text = new Flow.Property('Text', 'object');
