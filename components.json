@@ -1,14 +1,14 @@
 {
   "flow-json-component-to-json": {
     "graphComponentId": "flow-json-component-to-json",
-    "title": "From Text to JSON",
-    "category": "Actions",
+    "title": "Text to JSON",
+    "category": "JSON",
     "imgSrc": "assets/images/icons/to-json.svg",
     "type": "graphComponent",
     "file": "./to-json.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
-      "icon-color": "#7ab260"
+      "icon-color": "#35f4db"
     },
     "ports": [
       {
@@ -72,14 +72,14 @@
   },
   "flow-json-component-from-json": {
     "graphComponentId": "flow-json-component-from-json",
-    "title": "From JSON to Text",
-    "category": "Actions",
+    "title": "JSON to Text",
+    "category": "JSON",
     "imgSrc": "assets/images/icons/from-json.svg",
     "type": "graphComponent",
     "file": "./from-json.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
-      "icon-color": "#7ab260"
+      "icon-color": "#35f4db"
     },
     "ports": [
       {
