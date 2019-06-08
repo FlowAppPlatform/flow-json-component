@@ -8,7 +8,7 @@
     "file": "./to-json.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
-      "icon-color": "#35f4db"
+      "icon-color": "#1e8896"
     },
     "ports": [
       {
@@ -79,7 +79,7 @@
     "file": "./from-json.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
-      "icon-color": "#35f4db"
+      "icon-color": "#1e8896"
     },
     "ports": [
       {
