@@ -15,6 +15,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Converted Text to JSON",
+        "color": "#3BC105",
         "properties": [
           {
             "categoryName": "General",
@@ -35,6 +36,7 @@
         "id": "Error",
         "title": "Error",
         "description": "An error occured",
+        "color": "#C83838",
         "properties": [
           {
             "categoryName": "General",
@@ -86,6 +88,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Converted JSON to Text",
+        "color": "#3BC105",
         "properties": [
           {
             "categoryName": "General",
@@ -106,6 +109,7 @@
         "id": "Error",
         "title": "Error",
         "description": "An error occured",
+        "color": "#C83838",
         "properties": [
           {
             "categoryName": "General",
