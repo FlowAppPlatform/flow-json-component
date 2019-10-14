@@ -15,7 +15,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Converted Text to JSON",
-        "color": "#3BC105",
+        "color": "#1e8896",
         "properties": [
           {
             "categoryName": "General",
@@ -88,7 +88,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Converted JSON to Text",
-        "color": "#3BC105",
+        "color": "#1e8896",
         "properties": [
           {
             "categoryName": "General",
