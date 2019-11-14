@@ -2,8 +2,8 @@
  * Tests
  *  */
 
-var ToJson = require('./to-json');
-var FromJson = require('./from-json');
+var ToJson = require('./src/to-json');
+var FromJson = require('./src/from-json');
 
 const Graph = require('flow-platform-sdk').Graph;
 const graph = new Graph("graph-1");

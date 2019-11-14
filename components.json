@@ -5,7 +5,7 @@
     "category": "JSON",
     "imgSrc": "assets/images/icons/to-json.svg",
     "type": "graphComponent",
-    "file": "./to-json.js",
+    "file": "./src/to-json.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
       "icon-color": "#1e8896"
@@ -15,7 +15,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Converted Text to JSON",
-        "color": "#3BC105",
+        "color": "#1e8896",
         "properties": [
           {
             "categoryName": "General",
@@ -78,7 +78,7 @@
     "category": "JSON",
     "imgSrc": "assets/images/icons/from-json.svg",
     "type": "graphComponent",
-    "file": "./from-json.js",
+    "file": "./src/from-json.js",
     "executionPlatform": ["server", "client"],
     "metadata": {
       "icon-color": "#1e8896"
@@ -88,7 +88,7 @@
         "id": "Success",
         "title": "Success",
         "description": "Converted JSON to Text",
-        "color": "#3BC105",
+        "color": "#1e8896",
         "properties": [
           {
             "categoryName": "General",
